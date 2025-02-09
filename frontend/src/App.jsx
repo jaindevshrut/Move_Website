@@ -1,11 +1,19 @@
-import './App.css'
-// we are unable to return mutiple elements in react so we use Fragment (<> </>) to wrap all the elements
+import './css/App.css'
+import Home from './pages/Home';
+import Favorites from './pages/Favorites';
+import NavBar from './components/NavBar';
+import { Routes, Route } from 'react-router-dom';
 function App() {
   return (
-    <>
-      <h1>Hello World</h1>
-      <p>This is a paragraph</p>
-    </>
+    <div>
+      <NavBar />
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/favorites" element={<Favorites />} />
+        </Routes>
+      </main>
+    </div>
   )
 }
 
